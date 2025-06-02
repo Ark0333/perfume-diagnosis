@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: 'Helvetica Neue', 'Yu Gothic', sans-serif;
   background-image: url('images/rose-bg.png');
-  background-size: **cover**;           /* ← 画面全体に拡大 */
+  background-size: **contain**;           /* ← 画面全体に拡大 */
   background-position: **center**;      /* ← 中央に配置 */
   background-repeat: **no-repeat**;     /* ← 繰り返しなし */
   color: #333;
