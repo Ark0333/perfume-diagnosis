@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-image: url('flower-background.jpg'); /* お花の背景画像（別途追加してね） */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 240, 0.9); /* 高級感あるアイボリー調 */
+  padding: 2rem;
+  margin-top: 5vh;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2 {
+  font-weight: 300;
+  color: #444;
+  text-align: center;
+}
+
+p {
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8c94c; /* 黄色を基調 */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f1b800;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* 🌟 スマホ・タブレットに対応させる */
+@media (max-width: 600px) {
+  .container {
+    margin: 2vh 5vw;
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
