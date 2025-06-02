@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A scent that suits you</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="quiz-container">
+    <h1>A scent that suits you</h1>
+    <div id="quiz-start">
+      <p>あなたにぴったりの香りを、たった数問で診断します。</p>
+      <button onclick="startQuiz()">診断をはじめる</button>
+    </div>
+
+    <div id="quiz-question" style="display:none;">
+      <p class="question" id="question-text"></p>
+      <div class="options" id="options-container"></div>
+    </div>
+
+    <div id="quiz-result" style="display:none;">
+      <h2>診断結果</h2>
+      <p id="result-text"></p>
+      <button onclick="location.reload()">もう一度診断する</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
