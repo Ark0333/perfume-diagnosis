@@ -91,3 +91,11 @@ function showResult(resultType) {
     console.error("タイプが見つかりません: " + resultType);
   }
 }
+// 結果表示のところ（例）
+function showResult(resultType) {
+  const resultElement = document.getElementById("result");
+  
+  resultElement.innerHTML = "診断結果の内容をここに表示！";
+  resultElement.classList.remove("hidden"); // 非表示を解除
+  resultElement.classList.add("fade-in"); // フェードイン演出
+}
