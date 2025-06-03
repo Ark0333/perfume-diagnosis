@@ -142,3 +142,37 @@ button:active {
     transform: translateY(0);
   }
 }
+.result {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  padding: 30px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* タイプごとの色（例） */
+.result.floral {
+  border-left: 8px solid #eec6d2;
+}
+.result.citrus {
+  border-left: 8px solid #fce38a;
+}
+.result.woody {
+  border-left: 8px solid #c8b6a6;
+}
+.result.oriental {
+  border-left: 8px solid #d3a4a4;
+}
+.result.aquatic {
+  border-left: 8px solid #a8dadc;
+}
