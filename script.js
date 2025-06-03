@@ -69,3 +69,25 @@ function showResult() {
 
   document.getElementById("result-text").textContent = resultText;
 }
+function showResult(resultType) {
+  // 質問エリア非表示
+  document.getElementById("question-section").style.display = "none";
+
+  // 結果エリア表示
+  const resultSection = document.getElementById("result-section");
+  resultSection.style.display = "block";
+
+  // 全タイプを非表示に
+  const allResults = resultSection.querySelectorAll(".result");
+  allResults.forEach(res => {
+    res.style.display = "none";
+  });
+
+  // 該当のタイプだけ表示
+  const selectedResult = resultSection.querySelector("." + resultType);
+  if (selectedResult) {
+    selectedResult.style.display = "block";
+  } else {
+    console.error("タイプが見つかりません: " + resultType);
+  }
+}
