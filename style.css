@@ -9,6 +9,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;  /* 背景を固定（スクロールで動かない）←お好みで！ */
   color: #333;
 }
 
