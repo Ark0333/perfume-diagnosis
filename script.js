@@ -99,7 +99,6 @@ function showResult(resultType) {
   resultElement.classList.remove("hidden"); // 非表示を解除
   resultElement.classList.add("fade-in"); // フェードイン演出
 }
-// 結果表示のところ（例）
 function showResult(resultType) {
   const resultElement = document.getElementById("result");
   
@@ -107,3 +106,4 @@ function showResult(resultType) {
   resultElement.classList.remove("hidden"); // 非表示を解除
   resultElement.classList.add("fade-in"); // フェードイン演出
 }
+
