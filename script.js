@@ -99,5 +99,37 @@ function showResult(resultType) {
   resultElement.classList.remove("hidden"); // 非表示を解除
   resultElement.classList.add("fade-in"); // フェードイン演出
 }
+function showResult() {
+  // 質問を非表示
+  document.getElementById("quiz-question").style.display = "none";
 
+  // 結果セクションを表示
+  const resultSection = document.getElementById("quiz-result");
+  resultSection.style.display = "block";
+
+  // 最も高いスコアのタイプを特定
+  const maxScore = Math.max(...scores);
+  const topIndexes = scores
+    .map((score, i) => (score === maxScore ? i : -1))
+    .filter(i => i !== -1);
+
+  const resultType = scentTypes[topIndexes[0]];
+
+  // 全タイプ非表示にしてから該当の結果だけ表示
+  const allResults = resultSection.querySelectorAll(".result-type");
+  allResults.forEach(res => {
+    res.style.display = "none";
+  });
+
+  const selectedResult = resultSection.querySelector(`.result-${resultType}`);
+  if (selectedResult) {
+    selectedResult.style.display = "block";
+    selectedResult.classList.add("fade-in");
+  } else {
+    console.error("タイプが見つかりません：" + resultType);
+  }
+
+  // 結果テキストも設定（必要に応じて）
+  document.getElementById("result-text").textContent = results[resultType];
+}
 
