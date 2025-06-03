@@ -176,3 +176,13 @@ button:active {
 .result.aquatic {
   border-left: 8px solid #a8dadc;
 }
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
