@@ -133,3 +133,19 @@ function showResult() {
   document.getElementById("result-text").textContent = results[resultType];
 }
 
+function showResult() {
+  // ...（今までの処理）
+
+  const resultText = topIndexes.length === 1
+    ? results[scentTypes[topIndexes[0]]]
+    : `${results[scentTypes[topIndexes[0]]]}`;
+
+  document.getElementById("result-text").textContent = resultText;
+
+  // シェア用テキストとURL
+  const shareText = encodeURIComponent("あなたにぴったりな香りは…✨\n" + resultText + "\n診断してみてね👇");
+  const pageUrl = encodeURIComponent(window.location.href);
+
+  document.getElementById("twitter-share").href = `https://twitter.com/intent/tweet?text=${shareText}&url=${pageUrl}`;
+  document.getElementById("line-share").href = `https://social-plugins.line.me/lineit/share?url=${pageUrl}`;
+}
