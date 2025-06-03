@@ -1,65 +1,101 @@
+/* フォント読み込み（HTMLの<head>に追加する） */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', 'Yu Gothic', sans-serif;
-  background-image: url('/perfume-diagnosis/images/rose-bg.png');
+  font-family: 'Marcellus', serif;
+  background-image: url('/perfume-diagnosis/images/rose-bg.PNG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #333;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 240, 0.9); /* 高級感あるアイボリー調 */
+/* 診断全体エリアのぼかし＆高級感 */
+main {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
   padding: 2rem;
-  margin-top: 5vh;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 3rem auto;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease forwards;
 }
 
+/* タイトルや見出し */
 h1, h2 {
-  font-weight: 300;
-  color: #444;
   text-align: center;
-}
-
-p {
-  font-weight: 200;
-  line-height: 1.6;
-}
-
-button {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.75rem 1.5rem;
-  background-color: #f8c94c; /* 黄色を基調 */
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 300;
   color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* 質問エリア */
+.question {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+/* 選択肢 */
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* 診断ボタン */
+button {
+  background-color: #ffd54f;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 2rem auto;
 }
 
 button:hover {
-  background-color: #f1b800;
+  background-color: #ffeb3b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
+/* 診断結果 */
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-/* 🌟 スマホ・タブレットに対応させる */
+/* フェードインアニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* スマホ対応 */
 @media (max-width: 600px) {
-  .container {
-    margin: 2vh 5vw;
-    padding: 1.5rem 1rem;
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .question {
+    font-size: 1rem;
   }
 
   button {
@@ -67,11 +103,7 @@ button:hover {
     font-size: 1rem;
   }
 
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
+  .result {
+    font-size: 1rem;
   }
 }
